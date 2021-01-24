@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hannah's Homepage</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div class = "container">
+        <a href="https://twitter.com/home"> <img src="icons-01.png" alt="Twitter"> </a>
+        <a href="https://www.youtube.com/"> <img src="icons-02.png" alt="YouTube"> </a>
+        <a href="https://www.google.com/"> <img src="icons-03.png" alt="Google"> </a>
+        <a href="https://open.spotify.com/"> <img src="icons-04.png" alt="Spotify"> </a>
+        <a href="https://www.netflix.com/browse"> <img src="icons-05.png" alt="Netflix"> </a>
+        <a href="https://www.facebook.com/marketplace"> <img src="icons-06.png" alt="Facebook"> </a>
+        <a href="https://www.messenger.com/"> <img src="icons-17.png" alt="Messenger"> </a>
+        <a href="https://www.ebay.co.uk/"> <img src="icons-07.png" alt="ebay"> </a>
+        <a href="https://shibboleth.imperial.ac.uk/idp/profile/SAML2/POST/SSO?execution=e1s1"> <img src="icons-08.png" alt="Blackboard"> </a>
+        <a href="https://www.amazon.co.uk/"> <img src="icons-09.png" alt="Amazon"> </a>
+        <a href="https://www.amazon.co.uk/gp/video/storefront/ref=topnav_storetab_atv?node=3010085031"> <img src="icons-10.png" alt="Prime Video"> </a>
+        <a href="https://imperial.insendi.com/programmes/yHOlNolem"> <img src="icons-11.png" alt="Imperial Business School"> </a>
+        <a href="https://www.linkedin.com/feed/"> <img src="icons-12.png" alt="LinkedIn"> </a>
+        <a href="https://www.reddit.com/"> <img src="icons-13.png" alt="Reddit"> </a>
+        <a href="https://www.bbc.co.uk/news"> <img src="icons-14.png" alt="BBC News"> </a>
+        <a href="https://www.bbc.co.uk/iplayer"> <img src="icons-15.png" alt="BBC IPlayer"> </a>
+        <a href="https://www.notion.so/e259fcf03b6d4f908887f66a619eb592?v=a2b4241580c54842b438480d89d57efd"> <img src="icons-16.png" alt="Notion"> </a>
+        <a href="https://www.google.com/maps/@51.4623067,-0.210967,12z"> <img src="icons-18.png" alt="Google Maps"> </a>
+
+        <!-- <a href=""> <img src="icons-13.png" alt="Twitter"> </a>
+        <a href=""> <img src="icons-14.png" alt="Twitter"> </a>
+        <a href=""> <img src="icons-15.png" alt="Twitter"> </a>
+        <a href=""> <img src="icons-13.png" alt="Twitter"> </a>
+        <a href=""> <img src="icons-14.png" alt="Twitter"> </a>
+        <a href=""> <img src="icons-15.png" alt="Twitter"> </a> -->
+        <div id="api-images1"> </div>
+        <div id="api-images2"> </div>
+        
+        
+</div>
+<script>
+            
+    fetch('https://dog.ceo/api/breeds/image/random')
+    .then(response => response.json())
+    .then(function(obj){
+        console.log(obj.message)
+        document.getElementById("api-images1").innerHTML = '<img src="'+ obj.message + '" alt="dogs" id="api">'
+    })
+
+    fetch('https://api.thecatapi.com/v1/images/search?size=full')
+    .then(response => response.json())
+    .then(function(obj){
+        console.log(obj[0]["url"])
+        document.getElementById("api-images2").innerHTML = '<img src="'+ obj[0]["url"] + '" alt="cats" id="api">'
+    })
+
+</script>
+    
+</body>
+</html>
